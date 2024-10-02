@@ -3,6 +3,7 @@ import NotificationsPage from "../support/pages/NotificationsPage";
 import TasksPage from "../support/pages/TasksPage";
 import ReportsPage from "../support/pages/ReportsPage";
 import ArchivedPage from "../support/pages/ArchivedPage";
+import testData from "../fixtures/testData.json";
 
 
 describe("User-Workflow-test", () => {
@@ -13,8 +14,8 @@ describe("User-Workflow-test", () => {
   const archivedPage = new ArchivedPage();
   beforeEach("user-must-login-and-verify", function () {
     loginPage.visit();
-    loginPage.fillUsername("black");
-    loginPage.fillPassword("secretpassword");
+    loginPage.fillUsername(testData.username);
+    loginPage.fillPassword(testData.password);
     loginPage.submit();
     loginPage.verifyLogin();
   });
